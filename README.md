@@ -1,1 +1,1 @@
-# ResumeGenerator_GenAI
+# ResumeGenerator_GenAI repo for project
