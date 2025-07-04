@@ -1,6 +1,6 @@
 # Resume Generator using Generative AI
 
-This project aimed to develop a Resume Generator using Generative AI to help professionals and students create better resumes. Poorly written resumes are less likely to be shorlisted, and this tool seeks to improve those chances by automatically generating a resume based on user input.
+This project aims to develop a Resume Generator using Generative AI to help professionals and students create better resumes. Poorly written resumes are less likely to be shorlisted, and this tool seeks to improve those chances by automatically generating a resume based on user input.
 
 ---
 
