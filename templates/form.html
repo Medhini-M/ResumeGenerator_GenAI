@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Resume Generator</title>
+
+</head>
+
+<body height="100%">
+    <div class="header" id="header"><h1>Resume Generator</h1></div>
+
+    <div>
+        <form id="form1" class="form1">
+            <p id="p1"><b>Enter your information (include name, education, work experience, skills and projects):</b><br>
+            <i>Example: <br>
+            Name: John <br>
+            Education: Bachelors degree from University X in computer science, 90% in senior secondary, 92% in higher secondary.<br>
+            Work Experience: I am working as a data engineer for 3 years, 2 years at ABC company and 1 year at DEF company. I was responsible for creating data pipelines in ABC company and checking data quality at DEF company.<br>
+            Skills: Familiar with SQL, Python and Cloud services.<br>
+            Projects: Personal finance data analyzing app, data organizing website.</i><br>
+            </p>
+            <input type="text" id="inp" class="inp"> <br><br>
+            <button id="submit" type="submit" class="sb">Submit</button>
+        </form>
+    </div>
+
+    <div>
+        <p id="output" class="op"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+    </div>
+
+    <div class="footer" id="footer"><p>to make you stand out</p></div>
+
+    
+    <script>
+        document.getElementById("submit").addEventListener("click", function(event) {
+            event.preventDefault();
+            
+            let data = document.getElementById("inp").value.trim();
+            if (data === "")
+            {alert("Kindly enter your details!!"); return; }
+
+            var addr = '/result?q=' + data;
+            let info;
+
+            fetch(addr)
+            .then(response => {
+                if (response.ok) {
+                    return response.text();   //Parse the response data as text
+                } else {
+                    throw new Error('API request failed');
+                }
+            })
+            .then(data => {
+                // Process the response data here
+                this.info = data
+                document.getElementById("output").innerText = `${this.info}`;
+            })
+            .catch(error => {
+            // Handle any errors here
+                this.name = error;
+                console.error(error); 
+            });
+            
+            
+            alert("Your details have been submitted!! Kindly wait for a few moments...");
+
+        });
+    </script>
+    
+</body>
+
+</html>

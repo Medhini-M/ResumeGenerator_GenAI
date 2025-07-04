@@ -1,0 +1,47 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: aliceblue;
+}
+
+.header{
+    color: white;
+    background-color: royalblue;
+    text-align: center;
+    padding: 10px;
+    top: 0;
+    z-index: 1000;
+}
+
+.footer{
+    font-size: small;
+    color: white;
+    background-color: royalblue;
+    text-align: center;
+    padding: 10px;
+    position: sticky;
+    margin-top: auto;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.form1{
+    font-size: medium;
+}
+
+input[type=text]{
+    width : 90%;
+    padding: 12px 20px;
+}
+
+.sb{
+    font-size: medium;
+    background-color: royalblue;
+    color: white;
+    padding: 3px 3px 3px 3px;
+    border-radius: 20%;
+}
+.sb:hover{
+    background-color: navy;
+}
+
+
